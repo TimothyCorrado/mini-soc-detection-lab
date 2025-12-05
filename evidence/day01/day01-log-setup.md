@@ -79,6 +79,11 @@ These events form the baseline for future detection and anomaly analysis.
 ✔ Baseline events captured  
 ✔ Evidence saved to repo structure  
 
-System is fully ready for Day 2 log parsing and detection engineering.
+---
+
+# 🎉 Day 1 Status: Completed  
+Windows telemetry sources successfully enabled and validated.  
+All required evidence has been collected and stored under `/evidence/day01/`.  
+This baseline will be used for Day 2 log parsing, enrichment, and early detection engineering.
 
 ---

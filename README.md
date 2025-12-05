@@ -27,7 +27,25 @@ The work is structured into daily, documented deliverables aligned with SOC work
 
 ---
 
-## 🧩 Day 1 – Log Setup & Baseline (Begins Tomorrow)
+
+## ✅ Day 1 Completed – Log Setup & Baseline Configuration (12/04/2025)  
+**Tag:** `@SOC-DAY1-LOGSETUP`
+
+Successfully configured the foundational telemetry sources required for SOC detection engineering:
+
+- Enabled Windows Security Audit Policy (Logon, Account Logon, Policy Change, Privilege Use, Object Access, Detailed Tracking)
+- Installed Sysmon v15.x with a hardened XML configuration
+- Enabled PowerShell Module Logging, Script Block Logging, and optional Transcription
+- Generated and validated baseline events:
+  - 4624 (Successful Logon)
+  - 4625 (Failed Logon)
+  - Sysmon Event ID 1 (Process Create)
+  - PowerShell 4104 (Script Block Logging)
+- Collected all Day-1 evidence into `/evidence/day01/`
+
+System is now fully instrumented and ready for Day 2 (Log Parsing & Detection Engineering).
+
+## 🧩 Day 1 – Log Setup & Baseline (Begins Tomorrow, 12/04/2025)
 Day 1 will produce employer-ready artifacts including:
 
 - `audit_policy_export.txt`  
