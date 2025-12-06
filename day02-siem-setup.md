@@ -1,5 +1,3 @@
-
-
 ## 🎉 Day 2 Status: Completed
 
 Splunk Enterprise successfully configured as the lab SIEM.  

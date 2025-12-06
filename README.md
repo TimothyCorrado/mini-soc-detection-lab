@@ -6,7 +6,7 @@
 </p>
 
 # 🛡️ SOC Log Engineering Project  
-**Tag:** `@SOC-DAY1-LOGSETUP`  
+**Tag:** `@SOC-7DAY-PROJECT`  
 **Purpose:** Build a production-grade Windows logging baseline for SOC detection engineering.
 
 This project establishes the foundation of a SIEM-ready telemetry pipeline inside a controlled Windows VM.  
@@ -26,6 +26,17 @@ This project demonstrates practical blue-team capabilities:
 The work is structured into daily, documented deliverables aligned with SOC workflows.
 
 ---
+
+## ✅ Day 3 Completed – Log Ingestion (Security + Sysmon) (12/06/2025)  
+**Tag:** `@SOC-DAY3-INGEST`
+
+- Exported authentication activity (4624 + 4625) from the Splunk SIEM into CSV format  
+- Exported Sysmon process creation events (EventCode 1) into CSV  
+- Stored datasets under `/evidence/day03/` for use in parsing and detection engineering  
+- Established a clean data pipeline from Windows → Splunk → CSV for analysis workflows
+
+---
+
 ## ✅ Day 2 Completed – SIEM Setup (Splunk) (12/05/2025)  
 **Tag:** `@SOC-DAY2-SIEMSETUP`
 
