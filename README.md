@@ -26,7 +26,23 @@ This project demonstrates practical blue-team capabilities:
 The work is structured into daily, documented deliverables aligned with SOC workflows.
 
 ---
+## ✅ Day 2 Completed – SIEM Setup (Splunk) (12/05/2025)  
+**Tag:** `@SOC-DAY2-SIEMSETUP`
 
+- Installed and configured **Splunk Enterprise** inside the Windows VM.
+- Added Windows Event Log inputs:
+  - **Security Log**
+  - **PowerShell Operational Log**
+  - **Sysmon Operational Log**
+- Verified ingestion using:
+  - Raw searches (`index=main`)
+  - Source-based searches
+  - tstats enumeration of event channels
+- Exported event samples and dashboard evidence into `/evidence/day02/`.
+
+Day 2 establishes the lab’s SIEM pipeline, enabling log parsing, threat hunting, and detection engineering in the coming days.
+
+---
 
 ## ✅ Day 1 Completed – Log Setup & Baseline Configuration (12/04/2025)  
 **Tag:** `@SOC-DAY1-LOGSETUP`
