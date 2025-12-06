@@ -1,118 +1,109 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Blue%20Team-Log%20Engineering-1f6feb?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Windows%20Security-Audit%20Policy-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Sysmon-Operational%20Visibility-purple?style=for-the-badge">
-  <img src="https://img.shields.io/badge/PowerShell-Logging%20Enabled-darkgreen?style=for-the-badge">
-</p>
+# ️ SOC Log Engineering Project
 
-# 🛡️ SOC Log Engineering Project  
 **Tag:** `@SOC-7DAY-PROJECT`  
-**Purpose:** Build a production-grade Windows logging baseline for SOC detection engineering.
+**Purpose:** Build a mini SOC detection lab around a Windows VM, Sysmon, Splunk, and (later) Wazuh to showcase blue-team log engineering and detection skills.
 
-This project establishes the foundation of a SIEM-ready telemetry pipeline inside a controlled Windows VM.  
-The focus is on correct configuration, artifact generation, and repeatable processes used in real SOC environments.
+This project is about doing what real SOC engineers do every day:
 
----
-
-## 📘 Scope
-This project demonstrates practical blue-team capabilities:
-
-- Configuring Security Audit Policies  
-- Deploying Sysmon with hardened XML  
-- Enabling PowerShell operational logging  
-- Generating clean baseline authentication events (4624 / 4625)  
-- Capturing and exporting logs for later parsing and detection writing  
-
-The work is structured into daily, documented deliverables aligned with SOC workflows.
+- Turning Windows into a proper telemetry source
+- Wiring that telemetry into a SIEM
+- Exporting and shaping data for detections and investigations
+- Documenting each step so a hiring manager can follow the story
 
 ---
 
-## ✅ Day 3 Completed – Log Ingestion (Security + Sysmon) (12/06/2025)  
+## Scope
+
+This lab focuses on practical, host-centric detection engineering:
+
+- Configuring **Windows Security Audit Policy**
+- Deploying **Sysmon** with a hardened XML configuration
+- Enabling **PowerShell** operational logging
+- Generating clean baseline events:
+  - 4624 / 4625 (logon activity)
+  - Sysmon Event ID 1 (process creation)
+  - PowerShell 4104 (ScriptBlock logging)
+- Ingesting logs into a **SIEM (Splunk)** and exporting datasets for analysis
+- Laying the groundwork to add **Wazuh** as an additional detection surface later
+
+Work is structured as “Day 1 – Day 7” so each commit shows clear forward progress.
+
+---
+
+## ✅ Day 3 – Log Ingestion (Security + Sysmon) — 12/06/2025
+
 **Tag:** `@SOC-DAY3-INGEST`
 
-- Exported authentication activity (4624 + 4625) from the Splunk SIEM into CSV format  
-- Exported Sysmon process creation events (EventCode 1) into CSV  
-- Stored datasets under `/evidence/day03/` for use in parsing and detection engineering  
-- Established a clean data pipeline from Windows → Splunk → CSV for analysis workflows
+- Exported authentication activity (4624 + 4625) from Splunk into CSV
+- Exported Sysmon process creation events (EventCode 1) from the Sysmon Operational channel
+- Stored datasets under `/evidence/day03/`:
+  - `splunk_security_logons_7d.csv`
+  - `splunk_sysmon_eventcode1_7d.csv`
+- Established a clean pipeline: **Windows → Splunk → CSV** for analysis and detection-building
+
+See: `day03-ingest.md`
 
 ---
 
-## ✅ Day 2 Completed – SIEM Setup (Splunk) (12/05/2025)  
+## ✅ Day 2 – SIEM Setup (Splunk) — 12/05/2025
+
 **Tag:** `@SOC-DAY2-SIEMSETUP`
 
-- Installed and configured **Splunk Enterprise** inside the Windows VM.
+- Installed and configured **Splunk Enterprise** inside the Windows VM
 - Added Windows Event Log inputs:
-  - **Security Log**
-  - **PowerShell Operational Log**
-  - **Sysmon Operational Log**
+  - Security Log
+  - PowerShell Operational Log (configured)
+  - Sysmon Operational Log
 - Verified ingestion using:
   - Raw searches (`index=main`)
   - Source-based searches
-  - tstats enumeration of event channels
-- Exported event samples and dashboard evidence into `/evidence/day02/`.
+  - `tstats` enumeration of event channels
+- Exported event samples and evidence to `/evidence/day02/`:
+  - `inputs.conf`
+  - Security log screenshots and CSVs
+  - Sysmon screenshots and CSVs
 
-Day 2 establishes the lab’s SIEM pipeline, enabling log parsing, threat hunting, and detection engineering in the coming days.
+Day 2 turned the VM into a **mini SIEM environment** that can be used for threat hunting and detection engineering.
+
+See: `day02-siem-setup.md`
 
 ---
 
-## ✅ Day 1 Completed – Log Setup & Baseline Configuration (12/04/2025)  
+## ✅ Day 1 – Log Setup & Baseline Configuration — 12/04/2025
+
 **Tag:** `@SOC-DAY1-LOGSETUP`
 
-Successfully configured the foundational telemetry sources required for SOC detection engineering:
+Baseline host instrumentation:
 
-- Enabled Windows Security Audit Policy (Logon, Account Logon, Policy Change, Privilege Use, Object Access, Detailed Tracking)
-- Installed Sysmon v15.x with a hardened XML configuration
-- Enabled PowerShell Module Logging, Script Block Logging, and optional Transcription
+- Enabled Windows Security Audit Policy:
+  - Logon, Account Logon, Policy Change, Privilege Use, Object Access, Detailed Tracking
+- Installed **Sysmon v15.x** with a hardened XML config
+- Enabled PowerShell:
+  - Module Logging
+  - Script Block Logging
+  - (Optional) Transcription
 - Generated and validated baseline events:
-  - 4624 (Successful Logon)
-  - 4625 (Failed Logon)
-  - Sysmon Event ID 1 (Process Create)
-  - PowerShell 4104 (Script Block Logging)
-- Collected all Day-1 evidence into `/evidence/day01/`
+  - 4624 (successful logon)
+  - 4625 (failed logon)
+  - Sysmon Event ID 1 (ProcessCreate)
+  - PowerShell 4104 (ScriptBlock)
 
-System is now fully instrumented and ready for Day 2 (Log Parsing & Detection Engineering).
-
-## 🧩 Day 1 – Log Setup & Baseline (Begins Tomorrow, 12/04/2025)
-Day 1 will produce employer-ready artifacts including:
-
-- `audit_policy_export.txt`  
-- `powershell_logging_status.txt`  
-- `sysmon_config.xml`  
-- `event-viewer-baseline.png`  
-- A documented baseline validation (4624, 4625, Sysmon ID 1, PowerShell 4104)
-
-These files demonstrate control over Windows telemetry and your ability to prepare systems for detection engineering.
+Day 1 output is stored under `/evidence/day01/` and documented in `day01-log-setup.md`.
 
 ---
 
-## 📁 Repository Structure (Initial)
-/evidence/
-/day01/ # Will contain exported logs and screenshots
-day01-log-setup.md # Technical notes and validation steps
-README.md
+## Repository Structure
 
----
-
-## 📅 Today’s Commit
-This commit initializes the project structure and documentation required for Day 1:
-
-- Added project summary focused on SOC relevance  
-- Created evidence directory structure  
-- Added Day 1 documentation file placeholder  
-
-This establishes the repository as a clean audit trail of your SOC engineering workflow.
-
----
-
-## 🔜 Next Deliverables
-Starting tomorrow, this repo will include:
-
-- A validated Windows audit policy configuration  
-- Sysmon installation and event verification  
-- PowerShell logging configuration and event verification  
-- Baseline authentication artifacts  
-- Evidence ready for parsing, detection-building, and dashboard creation  
-
-These deliverables will be used to build real detections, enrichment logic, and incident simulation in later phases.
-
----
+```text
+.
+├── README.md                      # Project overview and day-by-day progress
+├── day01-log-setup.md             # Day 1 – Windows logging baseline
+├── day02-siem-setup.md            # Day 2 – Splunk SIEM setup & inputs
+├── day03-ingest.md                # Day 3 – Dataset export from Splunk
+├── detections/                    # (Planned) SPL rules / sigma-style logic
+├── diagrams/                      # Architecture / data flow diagrams
+├── triage_notes/                  # (Planned) Investigation / triage walkthroughs
+└── evidence/
+    ├── day01/                     # Audit policy exports, Sysmon config, baseline screenshots
+    ├── day02/                     # Splunk inputs.conf, SIEM screenshots, CSV exports
+    └── day03/                     # Security + Sysmon CSV datasets for analysis
