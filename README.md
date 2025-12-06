@@ -37,6 +37,34 @@ Work is structured as “Day 1 – Day 7” so each commit shows clear forward p
 
 ---
 
+## ✅ Day 4 – Detection Engineering (Security + Sysmon) — 12/06/2025
+**Tag:** `@SOC-DAY4-DETECTIONS`  
+
+**Focus:** Convert raw Windows Security + Sysmon telemetry into actionable detections using Splunk SPL.
+
+### 🔍 Detections Implemented
+- **Excessive Failed Logons (Brute Force):**  
+  SPL rule analyzing 4625 failures over 5-minute windows.
+- **Success After Multiple Failures:**  
+  Correlates failed (4625) and successful (4624) logons to detect spray-success behavior.
+- **Sysmon Operational Visibility:**  
+  Baseline query confirming ingestion of Sysmon Operational events into Splunk.
+- **Sysmon LOLBins Detection:**  
+  Prepared SPL to identify execution of high-risk native Windows binaries (cmd, powershell, mshta, certutil, bitsadmin, wscript).
+
+### 📁 Deliverables
+- All SPL queries saved under:  
+  `evidence/day04/*.spl`
+- Screenshots and CSV exports stored under:  
+  `evidence/day04/`
+- Full write-up documented in:  
+  `day04-detections.md`
+
+**Outcome:**  
+Day 4 establishes the first detection layer of the SOC lab, enabling authentication anomaly detection and validating Sysmon telemetry for future threat behavior analysis.
+
+---
+
 ## ✅ Day 3 – Log Ingestion (Security + Sysmon) — 12/06/2025
 
 **Tag:** `@SOC-DAY3-INGEST`
