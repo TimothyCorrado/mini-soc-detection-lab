@@ -1,3 +1,10 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/Blue%20Team-Log%20Engineering-0a84ff?style=for-the-badge&logo=windows&logoColor=white">
+  <img src="https://img.shields.io/badge/Windows%20Security-Audit%20Policy-004aad?style=for-the-badge&logo=microsoft&logoColor=white">
+  <img src="https://img.shields.io/badge/Sysmon-Process%20Monitoring-5a32a3?style=for-the-badge&logo=security&logoColor=white">
+  <img src="https://img.shields.io/badge/PowerShell-Operational%20Logging-066cfa?style=for-the-badge&logo=powershell&logoColor=white">
+</p>
+
 # ️ SOC Log Engineering Project
 
 **Tag:** `@SOC-7DAY-PROJECT`  
