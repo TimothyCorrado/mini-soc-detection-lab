@@ -43,40 +43,42 @@ It demonstrates real-world blue team and detection engineering capability.
 
 ## Lab Architecture
 
-### 📊 Mermaid Architecture (NO code fences here)
+### 📊 Mermaid Architecture
 
 ```mermaid  
 flowchart LR
 
     subgraph Endpoint["Windows Endpoint"]
-        A1[Windows Security Logs (4624, 4625, 4672…)]
-        A2[Sysmon Telemetry (Process, Network, File)]
+        A1["Windows Security Logs"]
+        A2["Sysmon Telemetry"]
     end
 
     subgraph Forwarding["Event Forwarding Layer"]
-        B[Forwarder]
+        B["Forwarder"]
     end
 
     subgraph Splunk["Splunk SIEM"]
-        C1[Inputs (WinEventLog + Sysmon)]
-        C2[Indexing Layer (main index)]
-        C3[Detection Rules (SPL Searches)]
-        C4[Alert Triggering (Correlation)]
+        C1["Inputs - WinEventLog and Sysmon"]
+        C2["Indexing Layer (main index)"]
+        C3["Detection Rules - SPL"]
+        C4["Alert Triggering - Correlation"]
     end
 
     subgraph SOC["SOC Workflow"]
-        D1[Triage (Enrichment + Verdict)]
-        D2[Final SOC Report (Evidence + Summary)]
+        D1["Triage - Enrichment and Verdict"]
+        D2["Final SOC Report"]
     end
 
-    A1 --> B  
-    A2 --> B  
-    B --> C1  
-    C1 --> C2  
-    C1 --> C3  
-    C3 --> C4  
-    C4 --> D1  
-    D1 --> D2  
+    A1 --> B
+    A2 --> B
+
+    B --> C1
+    C1 --> C2
+    C1 --> C3
+
+    C3 --> C4
+    C4 --> D1
+    D1 --> D2
 
 ```
 
