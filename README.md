@@ -37,6 +37,28 @@ Work is structured as “Day 1 – Day 7” so each commit shows clear forward p
 
 ---
 
+### 📝 Day 6 – SOC Investigation Report — 12/06/2025
+**Tag:** `@SOC-DAY6-REPORT`  
+
+**Focus:** Consolidate detections, triage output, and evidence into a formal SOC investigation report suitable for leadership and portfolio presentation.
+
+#### ✔ Key Accomplishments
+- Produced an executive-level summary of the Day 5 authentication alert
+- Documented detailed SOC triage findings, enrichment steps, and conclusions
+- Assessed risk, root cause, and MITRE ATT&CK alignment (T1110 – Brute Force)
+- Provided recommendations for detection tuning, logging maturity, and SOC workflow improvements
+- Compiled all evidence from Days 1–5 into a structured table
+- Finalized report in `day06-report.md`
+
+#### 📁 Evidence
+- Full report: `day06-report.md`
+- Supporting screenshots (optional): `evidence/day06/`
+
+**Result:**  
+Day 6 delivers a polished SOC investigation report demonstrating analytical reasoning, communication skills, and professional documentation — critical competencies for SOC and Blue Team roles.
+
+---
+
 ### 🛡️ Day 5 – Alert Triage & Investigation — 12/06/2025
 **Tag:** `@SOC-DAY5-TRIAGE`   
 
