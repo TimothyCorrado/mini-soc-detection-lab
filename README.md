@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://dummyimage.com/900x180/1f6feb/ffffff&text=Mini+SOC+Detection+Lab" alt="SOC Lab Banner">
+  <img src="https://dummyimage.com/600x50/1f6feb/ffffff&text=Mini+SOC+Detection+Lab" alt="SOC Lab Banner">
 </p>
 
 <p align="center">
@@ -52,14 +52,6 @@ This lab focuses on practical, host-centric detection engineering:
 Work is structured as “Day 1 – Day 7” so each commit shows clear forward progress.
 
 ---
-
-## 📚 Table of Contents
-- [Lab Architecture](#-lab-architecture)
-- [Repository Structure](#-repository-structure)
-- [Day-by-Day Progress](#-day-by-day-progress)
-- [Skills Demonstrated](#-skills-demonstrated)
-- [Next Steps](#-possible-next-steps)
-- [How to Use This Repo](#-how-to-use-this-repo)
 
 ### 📝 Day 6 – SOC Investigation Report — 12/06/2025
 **Tag:** `@SOC-DAY6-REPORT`  
