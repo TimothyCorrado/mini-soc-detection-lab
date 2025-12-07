@@ -1,9 +1,25 @@
 <p align="center">
+  <img src="https://dummyimage.com/900x180/1f6feb/ffffff&text=Mini+SOC+Detection+Lab" alt="SOC Lab Banner">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Blue%20Team-Log%20Engineering-0a84ff?style=for-the-badge&logo=windows&logoColor=white">
   <img src="https://img.shields.io/badge/Windows%20Security-Audit%20Policy-004aad?style=for-the-badge&logo=microsoft&logoColor=white">
   <img src="https://img.shields.io/badge/Sysmon-Process%20Monitoring-5a32a3?style=for-the-badge&logo=security&logoColor=white">
   <img src="https://img.shields.io/badge/PowerShell-Operational%20Logging-066cfa?style=for-the-badge&logo=powershell&logoColor=white">
 </p>
+
+```mermaid
+flowchart LR
+    A[Windows Security Logs] --> B[Event Forwarding]
+    C[Sysmon Telemetry] --> B
+    B --> D[Splunk Inputs]
+    D --> E[Indexing]
+    E --> F[Detection Rules]
+    F --> G[Alert Triggered]
+    G --> H[SOC Analyst Triage]
+    H --> I[Final SOC Report]
+  ```
 
 # ️ SOC Log Engineering Project
 
@@ -36,6 +52,14 @@ This lab focuses on practical, host-centric detection engineering:
 Work is structured as “Day 1 – Day 7” so each commit shows clear forward progress.
 
 ---
+
+## 📚 Table of Contents
+- [Lab Architecture](#-lab-architecture)
+- [Repository Structure](#-repository-structure)
+- [Day-by-Day Progress](#-day-by-day-progress)
+- [Skills Demonstrated](#-skills-demonstrated)
+- [Next Steps](#-possible-next-steps)
+- [How to Use This Repo](#-how-to-use-this-repo)
 
 ### 📝 Day 6 – SOC Investigation Report — 12/06/2025
 **Tag:** `@SOC-DAY6-REPORT`  
