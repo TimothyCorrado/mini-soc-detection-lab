@@ -158,24 +158,24 @@ Evidence: evidence/day07/
 
 ```text
 .
-├── README.md  
-├── LICENSE  
-│  
-├── day01-log-setup.md  
-├── day02-siem-setup.md  
-├── day03-ingest.md  
-├── day04-detections.md  
-├── day05-triage.md  
-├── day06-report.md  
-│  
-└── evidence/  
-  ├── day01/  
-  ├── day02/  
-  ├── day03/  
-  ├── day04/  
-  ├── day05/  
-  ├── day06/  
-  └── day07/  
+├── README.md                          # Full lab overview and instructions
+├── LICENSE                            # MIT license
+│
+├── day01-log-setup.md                 # Day 1 – Audit Policy + Sysmon
+├── day02-siem-setup.md                # Day 2 – Splunk onboarding
+├── day03-ingest.md                    # Day 3 – Dataset exports
+├── day04-detections.md                # Day 4 – Detection engineering
+├── day05-triage.md                    # Day 5 – Alert triage
+├── day06-report.md                    # Day 6 – SOC investigation report
+│
+└── evidence/
+    ├── day01/                         # Baseline configuration evidence
+    ├── day02/                         # SIEM screenshots + inputs
+    ├── day03/                         # CSV dataset exports
+    ├── day04/                         # Detection evidence
+    ├── day05/                         # Triage screenshots + raw events
+    ├── day06/                         # Report visuals (optional)
+    └── day07/                         # Architecture PNG 
 ```
 ---
 
