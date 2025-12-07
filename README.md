@@ -37,6 +37,28 @@ Work is structured as “Day 1 – Day 7” so each commit shows clear forward p
 
 ---
 
+### 🛡️ Day 5 – Alert Triage & Investigation — 12/06/2025
+**Tag:** `@SOC-DAY5-TRIAGE`   
+
+**Focus:** Perform SOC-style triage on a triggered brute-force detection alert.
+
+#### ✔ Key Accomplishments
+- Triggered the excessive failed logons detection (4625)
+- Captured evidence and screenshots of the alert in Splunk
+- Performed a full Tier 1 → Tier 2 investigation workflow
+- Documented triage questions, enrichment steps, and results
+- Assessed alert severity and closed as benign based on findings
+- Added MITRE ATT&CK mapping (T1110 – Brute Force)
+
+#### 📁 Evidence
+- Alert screenshots and triage artifacts saved in: `evidence/day05/`
+- Full investigation documented in: `day05-triage.md`
+
+**Result:**  
+Day 5 establishes a real SOC triage workflow using Windows Security telemetry, enabling investigation reasoning, correlation queries, and ATT&CK-aligned alert classification.
+
+---
+
 ## ✅ Day 4 – Detection Engineering (Security + Sysmon) — 12/06/2025
 **Tag:** `@SOC-DAY4-DETECTIONS`  
 
