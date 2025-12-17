@@ -82,11 +82,6 @@ flowchart LR
 
 ```
 
-### PNG Architecture Diagram  
-`evidence/day07/architecture_advanced_clean.png`
-
----
-
 ## Day-by-Day Progress
 
 ### 🧩 Day 1 – Logging Baseline  
